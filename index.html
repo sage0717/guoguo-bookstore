@@ -4,78 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>果果电子书店</title>
+
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-.book { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
-h1 { margin-bottom: 10px; }
-h2 { margin: 0 0 8px 0; }
-.author { font-size: 14px; color: #555; }
-.price { font-weight: bold; margin: 10px 0; }
-button {
-  padding: 10px 16px;
-  background: #4CAF50;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+}
+
+header {
+  background: #1e88e5;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
+  padding: 18px;
+  text-align: center;
+}
+
+.container {
+  padding: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.book {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.book h3 {
+  margin-top: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #e53935;
+}
+
+.tag {
+  display: inline-block;
+  background: #e0f2f1;
+  color: #00796b;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.buy {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #43a047;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  padding: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>📚 果果电子书店</h1>
-<p>电子书 · PDF / EPUB · 扫码付款 · 支付后 WhatsApp 发书</p>
+<header>
+  <h1>📚 果果电子书店</h1>
+  <p>PDF / EPUB · 支付宝 / 微信 / 转账</p>
+</header>
 
-<!-- 书籍一 -->
-<div class="book">
-  <h2>《逻辑学导论（第 15 版）》</h2>
-  <p class="author">
-    作者：欧文・M・柯匹（Irving M. Copi）<br>
-    修订：卡尔・科恩（Carl Cohen）、维克多・罗迪奇（Victor Rodych）
-  </p>
-  <p>
-    全球高校经典逻辑学教材，系统整合传统三段论与现代符号逻辑，
-    收录文恩图检验、真值表、短真值表法、间接证明等核心方法，
-    是逻辑、哲学、法学、计算机等专业的必读入门书。
-  </p>
-  <p class="price">价格：IDR 80,000 / RMB 40 / USD 7</p>
-  <button onclick="location.href='book1.html'">查看详情 / 购买</button>
+<div class="container">
+
+  <div class="book">
+    <h3>《逻辑学导论（第 15 版）》</h3>
+    <p>现代逻辑学经典教材，全球高校通用。</p>
+    <span class="tag">PDF</span>
+    <span class="tag">EPUB</span>
+    <p class="price">IDR 80,000 ｜ RMB 40 ｜ USD 7</p>
+    <a class="buy" href="book1.html">查看详情 / 购买</a>
+  </div>
+
+  <div class="book">
+    <h3>《被追赶的经济体》</h3>
+    <p>“资产负债表衰退”理论核心著作。</p>
+    <span class="tag">PDF</span>
+    <span class="tag">EPUB</span>
+    <p class="price">IDR 70,000 ｜ RMB 35 ｜ USD 6</p>
+    <a class="buy" href="book2.html">查看详情 / 购买</a>
+  </div>
+
+  <div class="book">
+    <h3>《深度关系：从建立信任到彼此成就》</h3>
+    <p>斯坦福商学院人际关系课程精华。</p>
+    <span class="tag">PDF</span>
+    <span class="tag">EPUB</span>
+    <p class="price">IDR 65,000 ｜ RMB 32 ｜ USD 5</p>
+    <a class="buy" href="book3.html">查看详情 / 购买</a>
+  </div>
+
 </div>
 
-<!-- 书籍二 -->
-<div class="book">
-  <h2>《被追赶的经济体》</h2>
-  <p class="author">
-    作者：辜朝明（Richard C. Koo）<br>
-    野村综合研究所首席经济学家
-  </p>
-  <p>
-    提出“被追赶的经济体”三阶段发展模型，
-    结合“资产负债表衰退”理论，
-    深度解释日本、欧美等发达经济体长期增长乏力的根本原因，
-    是理解宏观经济与政策选择的重要读物。
-  </p>
-  <p class="price">价格：IDR 70,000 / RMB 35 / USD 6</p>
-  <button onclick="location.href='book2.html'">查看详情 / 购买</button>
-</div>
-
-<!-- 书籍三 -->
-<div class="book">
-  <h2>《深度关系：从建立信任到彼此成就》</h2>
-  <p class="author">
-    作者：大卫・布拉德福德（David Bradford）<br>
-    合著：卡罗尔・罗宾（Carole Robin）
-  </p>
-  <p>
-    源自斯坦福商学院 50 余年的经典课程，
-    系统讲解如何建立高信任、高投入的深度关系，
-    覆盖职场、家庭与个人成长场景，
-    是领导力与人际沟通领域的实战指南。
-  </p>
-  <p class="price">价格：IDR 65,000 / RMB 32 / USD 5</p>
-  <button onclick="location.href='book3.html'">查看详情 / 购买</button>
-</div>
+<footer>
+© 2025 果果电子书店 ｜ 数字内容，付款后人工发送
+</footer>
 
 </body>
 </html>
+
