@@ -5,37 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>果果电子书店</title>
 <style>
-body { font-family: Arial; margin: 20px; }
-.book { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-button { padding: 10px 15px; background: #4CAF50; color: #fff; border: none; border-radius: 5px; }
+body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+.book { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+h1 { margin-bottom: 10px; }
+h2 { margin: 0 0 8px 0; }
+.author { font-size: 14px; color: #555; }
+.price { font-weight: bold; margin: 10px 0; }
+button {
+  padding: 10px 16px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
 </style>
 </head>
+
 <body>
 
 <h1>📚 果果电子书店</h1>
-<p>电子书 · PDF / EPUB · 扫码付款</p>
+<p>电子书 · PDF / EPUB · 扫码付款 · 支付后 WhatsApp 发书</p>
 
+<!-- 书籍一 -->
 <div class="book">
-  <h3>① 英语口语100句</h3>
-  <p>零基础快速开口</p>
-  <p>IDR 50,000 / RMB 25 / USD 4</p>
-  <button onclick="location.href='book1.html'">查看详情</button>
+  <h2>《逻辑学导论（第 15 版）》</h2>
+  <p class="author">
+    作者：欧文・M・柯匹（Irving M. Copi）<br>
+    修订：卡尔・科恩（Carl Cohen）、维克多・罗迪奇（Victor Rodych）
+  </p>
+  <p>
+    全球高校经典逻辑学教材，系统整合传统三段论与现代符号逻辑，
+    收录文恩图检验、真值表、短真值表法、间接证明等核心方法，
+    是逻辑、哲学、法学、计算机等专业的必读入门书。
+  </p>
+  <p class="price">价格：IDR 80,000 / RMB 40 / USD 7</p>
+  <button onclick="location.href='book1.html'">查看详情 / 购买</button>
 </div>
 
+<!-- 书籍二 -->
 <div class="book">
-  <h3>② 实用英语会话300句</h3>
-  <p>生活 + 工作常用表达</p>
-  <p>IDR 70,000 / RMB 35 / USD 6</p>
-  <button onclick="location.href='book2.html'">查看详情</button>
+  <h2>《被追赶的经济体》</h2>
+  <p class="author">
+    作者：辜朝明（Richard C. Koo）<br>
+    野村综合研究所首席经济学家
+  </p>
+  <p>
+    提出“被追赶的经济体”三阶段发展模型，
+    结合“资产负债表衰退”理论，
+    深度解释日本、欧美等发达经济体长期增长乏力的根本原因，
+    是理解宏观经济与政策选择的重要读物。
+  </p>
+  <p class="price">价格：IDR 70,000 / RMB 35 / USD 6</p>
+  <button onclick="location.href='book2.html'">查看详情 / 购买</button>
 </div>
 
+<!-- 书籍三 -->
 <div class="book">
-  <h3>③ 英语语法速成</h3>
-  <p>一周掌握核心语法</p>
-  <p>IDR 60,000 / RMB 30 / USD 5</p>
-  <button onclick="location.href='book3.html'">查看详情</button>
+  <h2>《深度关系：从建立信任到彼此成就》</h2>
+  <p class="author">
+    作者：大卫・布拉德福德（David Bradford）<br>
+    合著：卡罗尔・罗宾（Carole Robin）
+  </p>
+  <p>
+    源自斯坦福商学院 50 余年的经典课程，
+    系统讲解如何建立高信任、高投入的深度关系，
+    覆盖职场、家庭与个人成长场景，
+    是领导力与人际沟通领域的实战指南。
+  </p>
+  <p class="price">价格：IDR 65,000 / RMB 32 / USD 5</p>
+  <button onclick="location.href='book3.html'">查看详情 / 购买</button>
 </div>
 
 </body>
 </html>
-
