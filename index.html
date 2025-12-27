@@ -1,224 +1,237 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>果果电子书店</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>果果电子书店 - 精选电子书</title>
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  background: #f5f6f8;
-  color: #333;
-}
-
-header {
-  background: linear-gradient(135deg,#4f46e5,#6366f1);
-  color: #fff;
-  padding: 28px 20px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 26px;
-}
-
-header p {
-  margin-top: 8px;
-  font-size: 14px;
-  opacity: .9;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 16px;
-}
-
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.book-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-  display: flex;
-  flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.1);
-}
-
-.book-card h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.book-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  flex-grow: 1;
-}
-
-.tags {
-  margin: 10px 0;
-}
-
-.tag {
-  display: inline-block;
-  background: #eef2ff;
-  color: #4338ca;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  margin-right: 6px;
-}
-
-.price {
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.buy-btn {
-  text-align: center;
-  background: #4f46e5;
-  color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.buy-btn:hover {
-  background: #4338ca;
-}
-
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: #777;
-  padding: 30px 10px;
-}
+  body {
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f9fafb;
+    color: #333;
+    line-height: 1.5;
+  }
+  header {
+    background-color: #007aff;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+  }
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 28px;
+  }
+  .card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgb(0 0 0 / 0.15);
+  }
+  .cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #007aff;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
+  .card-content {
+    padding: 18px 22px 26px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #007aff;
+    font-weight: 700;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 16px;
+    min-height: 56px;
+  }
+  .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #e63946;
+  }
+  .btn {
+    align-self: flex-start;
+    background: #007aff;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    user-select: none;
+    transition: background 0.3s ease;
+  }
+  .btn:hover {
+    background: #005bb5;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+  }
+  @media (max-width: 400px) {
+    .card-content {
+      padding: 14px 16px 20px;
+    }
+  }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>果果电子书店</h1>
-  <p>精选中英电子书 · 即时交付 · 多币种支付</p>
+  <h1>📚 果果电子书店</h1>
 </header>
 
-<div class="container">
-  <div class="book-grid">
+<main>
+  <div class="grid">
 
-    <!-- 1 -->
-    <div class="book-card">
-      <h3>逻辑学导论（第15版）</h3>
-      <p>全球高校通用逻辑学教材，系统训练批判性思维与论证能力。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 90,000 ｜ RMB 42 ｜ USD 7</div>
-      <a class="buy-btn" href="book1.html">查看详情</a>
+    <div class="card">
+      <div class="cover">逻辑学导论<br>（第15版）</div>
+      <div class="card-content">
+        <h3>逻辑学导论（第15版）</h3>
+        <div class="subtitle">现代逻辑学经典教材，融合传统三段论与现代符号逻辑。</div>
+        <div class="price">￥59 / IDR 130,000 / $9.99</div>
+        <a class="btn" href="book1.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 2 -->
-    <div class="book-card">
-      <h3>被追赶的经济体</h3>
-      <p>辜朝明提出“资产负债表衰退”理论，解释日本与发达经济体停滞。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 80,000 ｜ RMB 38 ｜ USD 6</div>
-      <a class="buy-btn" href="book2.html">查看详情</a>
+    <div class="card">
+      <div class="cover">被追赶的经济体</div>
+      <div class="card-content">
+        <h3>被追赶的经济体</h3>
+        <div class="subtitle">日本经济研究经典，理解宏观经济长期停滞的关键框架。</div>
+        <div class="price">￥49 / IDR 110,000 / $7.99</div>
+        <a class="btn" href="book2.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 3 -->
-    <div class="book-card">
-      <h3>深度关系</h3>
-      <p>斯坦福商学院人际互动课程精华，教你建立信任与高质量关系。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 85,000 ｜ RMB 40 ｜ USD 6</div>
-      <a class="buy-btn" href="book3.html">查看详情</a>
+    <div class="card">
+      <div class="cover">深度关系</div>
+      <div class="card-content">
+        <h3>深度关系</h3>
+        <div class="subtitle">斯坦福商学院人际互动课程精华，提升个人与职场关系质量。</div>
+        <div class="price">￥39 / IDR 85,000 / $6.99</div>
+        <a class="btn" href="book3.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 4 -->
-    <div class="book-card">
-      <h3>自然百年物理经典（英汉）</h3>
-      <p>Nature 百年物理精华，中英对照，理解现代物理与科学思想。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 120,000 ｜ RMB 58 ｜ USD 9</div>
-      <a class="buy-btn" href="book4.html">查看详情</a>
+    <div class="card">
+      <div class="cover">自然百年物理经典<br>英汉对照</div>
+      <div class="card-content">
+        <h3>自然百年物理经典（英汉对照）</h3>
+        <div class="subtitle">汇集百年物理学经典论文，适合科研与双语阅读者。</div>
+        <div class="price">￥99 / IDR 215,000 / $15.99</div>
+        <a class="btn" href="book4.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 5 -->
-    <div class="book-card">
-      <h3>双语读库·社会文化（61本）</h3>
-      <p>英语泛读神器，涵盖社会观察与文化随笔。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 150,000 ｜ RMB 68 ｜ USD 11</div>
-      <a class="buy-btn" href="book5.html">查看详情</a>
+    <div class="card">
+      <div class="cover">外研社双语读库<br>社会文化书系</div>
+      <div class="card-content">
+        <h3>外研社双语读库·社会文化书系（61本）</h3>
+        <div class="subtitle">适合英语学习与人文阅读，覆盖多位世界级作家。</div>
+        <div class="price">￥129 / IDR 280,000 / $19.99</div>
+        <a class="btn" href="book5.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 6 -->
-    <div class="book-card">
-      <h3>双语读库·文学社科（194本）</h3>
-      <p>西方文学与社科经典一次读全，长期学习收藏级。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 260,000 ｜ RMB 118 ｜ USD 18</div>
-      <a class="buy-btn" href="book6.html">查看详情</a>
+    <div class="card">
+      <div class="cover">外研社双语读库<br>西方文学社科经典</div>
+      <div class="card-content">
+        <h3>外研社双语读库·西方文学社科经典（194本）</h3>
+        <div class="subtitle">超大体量经典合集，适合系统性长期阅读。</div>
+        <div class="price">￥199 / IDR 430,000 / $29.99</div>
+        <a class="btn" href="book6.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 7 -->
-    <div class="book-card">
-      <h3>神奇树屋（中英双语）</h3>
-      <p>全球畅销儿童英语读物，故事驱动，轻松启蒙。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 100,000 ｜ RMB 48 ｜ USD 8</div>
-      <a class="buy-btn" href="book7.html">查看详情</a>
+    <div class="card">
+      <div class="cover">神奇树屋<br>中英双语系列</div>
+      <div class="card-content">
+        <h3>神奇树屋（中英双语）</h3>
+        <div class="subtitle">全球畅销儿童读物，适合亲子与启蒙阶段。</div>
+        <div class="price">￥69 / IDR 150,000 / $10.99</div>
+        <a class="btn" href="book7.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 8 -->
-    <div class="book-card">
-      <h3>伟大的思想（48册）</h3>
-      <p>哲学、经济、政治思想经典合集，构建通识框架。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 180,000 ｜ RMB 88 ｜ USD 14</div>
-      <a class="buy-btn" href="book8.html">查看详情</a>
+    <div class="card">
+      <div class="cover">伟大的思想<br>中英双语版</div>
+      <div class="card-content">
+        <h3>伟大的思想（中英双语48册）</h3>
+        <div class="subtitle">覆盖哲学、经济、政治等领域的思想源头。</div>
+        <div class="price">￥159 / IDR 345,000 / $23.99</div>
+        <a class="btn" href="book8.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 9 -->
-    <div class="book-card">
-      <h3>企鹅经典小黑书（50本）</h3>
-      <p>短小精悍的世界经典，适合碎片化阅读。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 130,000 ｜ RMB 58 ｜ USD 9</div>
-      <a class="buy-btn" href="book9.html">查看详情</a>
+    <div class="card">
+      <div class="cover">企鹅经典<br>小黑书</div>
+      <div class="card-content">
+        <h3>企鹅经典·小黑书（50本）</h3>
+        <div class="subtitle">适合碎片化阅读的世界文学与思想精华。</div>
+        <div class="price">￥89 / IDR 195,000 / $13.99</div>
+        <a class="btn" href="book9.html">查看详情</a>
+      </div>
     </div>
 
-    <!-- 10 -->
-    <div class="book-card">
-      <h3>美国语文（1–6册）</h3>
-      <p>塑造美国精神的经典教材，母语级英语训练。</p>
-      <div class="tags"><span class="tag">PDF</span><span class="tag">EPUB</span></div>
-      <div class="price">IDR 110,000 ｜ RMB 52 ｜ USD 8</div>
-      <a class="buy-btn" href="book10.html">查看详情</a>
+    <div class="card">
+      <div class="cover">美国语文<br>1–6册</div>
+      <div class="card-content">
+        <h3>美国语文（1–6册）</h3>
+        <div class="subtitle">塑造美国精神的经典读本，适合英语进阶学习者。</div>
+        <div class="price">￥79 / IDR 170,000 / $11.99</div>
+        <a class="btn" href="book10.html">查看详情</a>
+      </div>
     </div>
 
   </div>
-</div>
+</main>
 
 <footer>
-  © 果果电子书店 · 数字内容即时交付
+  &copy; 2025 果果电子书店 &nbsp;|&nbsp; 联系：sage08090717（微信） | +62 852 8266 1513（WhatsApp）
 </footer>
 
 </body>
 </html>
+
