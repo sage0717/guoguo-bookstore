@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>支付 - 深度关系</title>
+
 <style>
 body { font-family: Arial; margin: 20px; line-height: 1.6; }
 img { margin: 10px 0; }
@@ -16,27 +17,39 @@ button {
   font-size: 16px;
 }
 .notice { color: #555; font-size: 14px; }
+.section { margin-bottom: 24px; }
 </style>
 </head>
+
 <body>
 
 <h2>💳 支付页面</h2>
 <p><strong>书名：</strong>《深度关系：从建立信任到彼此成就》</p>
 <p><strong>价格：</strong>IDR 65,000 / RMB 32 / USD 5</p>
 
-<p class="notice">
-扫码付款后，请通过 WhatsApp 联系我们领取电子书。
-</p>
+<div class="section">
+  <h3>支付宝</h3>
+  <img src="alipay.png" width="200">
+</div>
 
-<h3>支付宝</h3>
-<img src="alipay.png" width="200">
+<div class="section">
+  <h3>微信支付</h3>
+  <img src="wechat.png" width="200">
+</div>
 
-<h3>微信支付</h3>
-<img src="wechat.png" width="200">
+<div class="section">
+  <h3>🇮🇩 BCA 银行转账（IDR）</h3>
+  <p>
+    <strong>银行：</strong>Bank Central Asia (BCA)<br>
+    <strong>账户名：</strong>JIANGXIUQIAO<br>
+    <strong>账号：</strong>8650756691
+  </p>
+  <p class="notice">
+    转账完成后，请通过 WhatsApp 联系我们，并发送转账截图。
+  </p>
+</div>
 
-<br><br>
-
-<button onclick="location.href='https://wa.me/6285282661513?text=我已支付《深度关系：从建立信任到彼此成就》，请发送电子书（PDF/EPUB）'">
+<button onclick="location.href='https://wa.me/6285282661513?text=我已完成付款《深度关系：从建立信任到彼此成就》，支付方式：支付宝/微信/BCA，请发送电子书（PDF/EPUB）'">
 我已付款，联系 WhatsApp
 </button>
 
